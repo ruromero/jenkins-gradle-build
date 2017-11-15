@@ -20,7 +20,7 @@ public class FooTest {
         // after garbage collection and decrease as new objects are created.
         long heapFreeSize = Runtime.getRuntime().freeMemory();
 
-        System.out.format("Heap Size: %fMb | Max Heap: %dMb | Free Heap: %dMb", heapSize / 1024, heapMaxSize / 1024, heapFreeSize / 1024);
+        System.out.format("Heap Size: %dMb | Max Heap: %dMb | Free Heap: %dMb", heapSize / 1024, heapMaxSize / 1024, heapFreeSize / 1024);
 
         assertEquals("Hello Kermit", new Foo().sayHello("Kermit"));
     }
