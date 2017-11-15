@@ -14,3 +14,9 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+test {
+    if(System.getenv("GRADLE_TEST_OPTS") != null) {
+        allJvmArgs System.getenv("GRADLE_TEST_OPTS")
+    }
+}
