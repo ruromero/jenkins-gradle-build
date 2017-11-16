@@ -16,7 +16,7 @@ dependencies {
 }
 
 test {
-    if(System.getenv("GRADLE_TEST_XMX")) {
-        maxHeapSize = System.getenv("GRADLE_TEST_XMX")
+    if(System.getenv("GRADLE_TEST_OPTS")) {
+        allJvmArgs = System.getenv("GRADLE_TEST_OPTS").tokenize(' ')
     }
 }

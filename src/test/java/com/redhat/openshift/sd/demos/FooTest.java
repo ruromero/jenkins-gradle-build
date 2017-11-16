@@ -7,7 +7,7 @@ import static junit.framework.TestCase.assertEquals;
 public class FooTest {
 
     @Test
-    public void testHello() {
+    public void testHello() throws InterruptedException {
 
         // Get current size of heap in bytes
         long heapSize = Runtime.getRuntime().totalMemory();
@@ -21,6 +21,9 @@ public class FooTest {
         long heapFreeSize = Runtime.getRuntime().freeMemory();
 
         System.out.format("Heap Size: %dMb | Max Heap: %dMb | Free Heap: %dMb", heapSize / 1024, heapMaxSize / 1024, heapFreeSize / 1024);
+
+        // Allow some time to monitor JVM
+        Thread.sleep(10000l);
 
         assertEquals("Hello Kermit", new Foo().sayHello("Kermit"));
     }
